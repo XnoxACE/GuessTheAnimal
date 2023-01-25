@@ -31,22 +31,25 @@ function askQuestions(responce){
     let responceOne = document.createTextNode("Your Animal is a Parrot");
 
     if(numQuestions == 1){
+        console.log("1")
         liNode.appendChild(questionOne);
         listNode.appendChild(liNode);
 
         if(responce == "Yes"){
             
-            numQuestions+=1;
+           
             canFly = true;
             console.log(canFly, numQuestions)
         }
         else if(responce == "No"){
-            numQuestions+=1;
+            
             canFly = false;
             console.log(canFly, numQuestions)
         }
+        numQuestions+=1;
     }
     else if(numQuestions == 2){
+        console.log("2")
         console.log(questionTwo)
         liNode.appendChild(questionTwo);
         listNode.appendChild(liNode);
@@ -54,12 +57,18 @@ function askQuestions(responce){
         if(responce == "Yes"){
             
             isPet = true;
+            numQuestions+=1;
         }
         else if(responce == "No"){
            
             isPet = false;
+            numQuestions+=1;
         }
 
+        
+        console.log("number" + numQuestions)
+    }
+    else if(numQuestions == 3){
         if(canFly == true && isPet == true){
             liNode.appendChild(responceOne);
             listNode.appendChild(liNode);
